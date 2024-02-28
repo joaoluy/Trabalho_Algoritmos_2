@@ -1,0 +1,202 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+typedef struct{
+    int idade;
+    string nome;
+    int telefone;
+    int pagamento;
+} Cliente;
+
+typedef struct{
+    bool P;
+    bool M;
+    bool G;
+    bool GG;
+}Tamanho;
+
+typedef struct{
+    string cor;
+    Tamanho tamanhos;
+    bool estampada;
+}Camisetas;
+
+typedef struct{
+    string cor;
+    Tamanho tamanhos;
+    bool estampada;
+}Calca;
+
+typedef struct{
+    string cor;
+    Tamanho tamanhos;
+    bool estampada;
+}Calcao;
+
+
+int cadastro(){
+    int Pix = 0;
+    int Cartao = 0;
+    int Boleto = 0;
+    Cliente NovoCliente;
+
+    cout << "Digite seu nome: " << endl;
+    cin >> NovoCliente.nome;
+
+    cout << "Digite sua idade: " << endl;
+    cin >> NovoCliente.idade;
+
+    cout << "Digite seu telefone: " << endl;
+    cin >> NovoCliente.telefone;
+
+    cout << "Escolha a forma de pagamento deseja cadastrar: " << endl;
+    cout << "1. cartao" << endl << "2. Pix" << endl << "3. Boleto" << endl;
+    cin >> NovoCliente.pagamento;
+
+    if(NovoCliente.pagamento == 1){
+        Cartao++;
+        return Cartao;
+    }else if(NovoCliente.pagamento == 2){
+        Pix += 2;
+        return Pix;
+    }else{
+        Boleto += 3;
+        return Boleto;
+    }
+}
+
+void mostracatalogo(Camisetas Camiseta){
+    cout << "Camiseta 1: " << endl;
+    cout << Camiseta.cor << endl;
+
+    cout << "Tamanhos: " << endl;
+    if(Camiseta.tamanhos.P == true){
+        cout << "P disponivel" << endl;
+    }else{
+        cout << "P indisponivel" << endl;
+    }
+
+    if(Camiseta.tamanhos.M == true){
+        cout << "M disponivel" << endl;
+    }else{
+        cout << "M indisponivel" << endl;
+    }
+
+    if(Camiseta.tamanhos.G == true){
+        cout << "G disponivel" << endl;
+    }else{
+        cout << "G indisponivel" << endl;
+    }
+
+    if(Camiseta.tamanhos.GG == true){
+        cout << "GG disponivel" << endl;
+    }else{
+        cout << "GG indisponivel" << endl;
+    }
+
+    cout << "Opçoes extras: " << endl;
+    if(Camiseta.estampada == true){
+        cout << "estampada disponivel" << endl;
+    }else{
+        cout << "estampada indisponivel" << endl;
+    }
+}
+
+int catalogoexistente(){
+    cout << "Catalogo:" << endl;
+    cout << "Camisetas disponiveis:" << endl;
+
+    Camisetas Camiseta1;
+    Camiseta1.cor = "azul";
+    Camiseta1.tamanhos.P = true;
+    Camiseta1.tamanhos.M = true;
+    Camiseta1.tamanhos.G = true;
+    Camiseta1.tamanhos.GG = true;
+    Camiseta1.estampada = true;
+    mostracatalogo(Camiseta1);
+    
+    Camisetas Camiseta2;
+    Camiseta2.cor = "preta";
+    Camiseta2.tamanhos.P = true;
+    Camiseta2.tamanhos.M = true;
+    Camiseta2.tamanhos.G = false;
+    Camiseta2.tamanhos.GG = true;
+    Camiseta2.estampada = false;
+    mostracatalogo(Camiseta2);
+
+    Calca Calca1;
+    Calca1.cor = "preta";
+    Calca1.tamanhos.P = true;
+    Calca1.tamanhos.M = true;
+    Calca1.tamanhos.G = true;
+    Calca1.tamanhos.GG = true;
+    Calca1.estampada = false;
+
+    Calca Calca2;
+    Calca2.cor = "vermelha";
+    Calca2.tamanhos.P = true;
+    Calca2.tamanhos.M = true;
+    Calca2.tamanhos.G = true;
+    Calca2.tamanhos.GG = true;
+    Calca2.estampada = true;
+
+}
+
+int catalogo(){
+    catalogoexistente();
+    return 0;
+}
+
+int pedido(){
+    return 0;
+}
+
+int menu(){
+    int pagamento;
+    int escolha;
+    bool validade = false;
+    system("clear||cls");
+
+    cout << "Bem Vindo a 4 ootd's" << endl;
+    cout << "1. Cadastrar novo usuario" << endl;
+    cout << "2. Ver catalogo" << endl;
+    cout << "3. Pedir uma peca que nao esta no catalogo" << endl;
+    cout << "4. Sair" << endl;
+
+    while(validade == false){
+
+        cin >> escolha;
+        if(escolha == 1){
+            validade = true;
+            escolha = 0;
+            cadastro();
+        }else if(escolha == 2){
+            validade = true;
+            escolha = 0;
+            catalogo();
+        }else if(escolha == 3){
+            validade = true;
+            escolha = 0;
+            pedido();
+        }else if(escolha == 4){
+            validade = true;
+            system("clear||cls");
+            cout << "obrigado por visitar a 4 ootd's";
+            Sleep(5000);
+            return 0;
+        }else{
+            system("clear||cls");
+            cout << "Numero invalido" << endl << "Selecione novamente:" << endl;
+            cout << "1. Cadastrar novo usuario" << endl;
+            cout << "2. Ver catalogo" << endl;
+            cout << "3. Pedir uma peca que nao esta no catalogo" << endl;
+            cout << "4. Sair" << endl;
+        }
+    }
+}
+
+int main(){
+    menu();
+    return 0;
+}
