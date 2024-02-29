@@ -1,0 +1,654 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+int login;
+
+typedef struct{
+    int idade;
+    string nome;
+    char pagamento;
+} Cliente;
+
+typedef struct{
+    bool P;
+    bool M;
+    bool G;
+    bool GG;
+}Tamanho;
+
+typedef struct{
+    string cor;
+    Tamanho tamanhos;
+    bool estampada;
+}Camisetas;
+
+typedef struct{
+    string cor;
+    Tamanho tamanhos;
+    bool estampada;
+}Calca;
+
+typedef struct{
+    string cor;
+    Tamanho tamanhos;
+    bool estampada;
+}Calcao;
+
+void cadastro(){
+    int *Pix = 0;
+    int *Cartao = 0;
+    int *Boleto = 0;
+    bool pagamento = false;
+    
+    Cliente NovoCliente;
+
+    cout << "Digite seu primeiro nome: " << endl;
+    cin >> NovoCliente.nome;
+
+    cout << "Digite sua idade: " << endl;
+    cin >> NovoCliente.idade;
+
+    while(pagamento == false){
+    cout << "Escolha a forma de pagamento deseja cadastrar: " << endl;
+    cout << "1. cartao" << endl << "2. Pix" << endl << "3. Boleto" << endl;
+    cin >> NovoCliente.pagamento;
+
+        if(NovoCliente.pagamento == '1'){
+            Cartao++;
+            pagamento = true;
+        }else if(NovoCliente.pagamento == '2'){
+            Pix += 2;
+            pagamento = true;
+        }else if(NovoCliente.pagamento == '3'){
+            Boleto += 3;
+            pagamento = true;
+        }else{
+            cout << "Numero invalido, digite novamente:" << endl;
+        }
+    }
+    login = 1;
+}
+
+void mostracamiseta(Camisetas Camiseta){
+    cout << "Cor: "<< endl;
+    cout << Camiseta.cor << endl;
+
+    cout << "Tamanhos: " << endl;
+    if(Camiseta.tamanhos.P == true){
+        cout << "P disponivel" << endl;
+    }else{
+        cout << "P indisponivel" << endl;
+    }
+
+    if(Camiseta.tamanhos.M == true){
+        cout << "M disponivel" << endl;
+    }else{
+        cout << "M indisponivel" << endl;
+    }
+
+    if(Camiseta.tamanhos.G == true){
+        cout << "G disponivel" << endl;
+    }else{
+        cout << "G indisponivel" << endl;
+    }
+
+    if(Camiseta.tamanhos.GG == true){
+        cout << "GG disponivel" << endl;
+    }else{
+        cout << "GG indisponivel" << endl;
+    }
+
+    cout << "Opcoes extras: " << endl;
+    if(Camiseta.estampada == true){
+        cout << "estampada disponivel" << endl;
+    }else{
+        cout << "estampada indisponivel" << endl;
+    }
+}
+
+void mostracalca(Calca Calca1){
+    cout << "Cor: " << endl;
+    cout << Calca1.cor << endl;
+
+    cout << "Tamanhos: " << endl;
+    if(Calca1.tamanhos.P == true){
+        cout << "P disponivel" << endl;
+    }else{
+        cout << "P indisponivel" << endl;
+    }
+
+    if(Calca1.tamanhos.M == true){
+        cout << "M disponivel" << endl;
+    }else{
+        cout << "M indisponivel" << endl;
+    }
+
+    if(Calca1.tamanhos.G == true){
+        cout << "G disponivel" << endl;
+    }else{
+        cout << "G indisponivel" << endl;
+    }
+
+    if(Calca1.tamanhos.GG == true){
+        cout << "GG disponivel" << endl;
+    }else{
+        cout << "GG indisponivel" << endl;
+    }
+
+    cout << "Opcoes extras: " << endl;
+    if(Calca1.estampada == true){
+        cout << "estampada disponivel" << endl;
+    }else{
+        cout << "estampada indisponivel" << endl;
+    }
+}
+
+void mostracalcao(Calcao Calcao1){
+    cout << "Cor: " << endl;
+    cout << Calcao1.cor << endl;
+
+    cout << "Tamanhos: " << endl;
+    if(Calcao1.tamanhos.P == true){
+        cout << "P disponivel" << endl;
+    }else{
+        cout << "P indisponivel" << endl;
+    }
+
+    if(Calcao1.tamanhos.M == true){
+        cout << "M disponivel" << endl;
+    }else{
+        cout << "M indisponivel" << endl;
+    }
+
+    if(Calcao1.tamanhos.G == true){
+        cout << "G disponivel" << endl;
+    }else{
+        cout << "G indisponivel" << endl;
+    }
+
+    if(Calcao1.tamanhos.GG == true){
+        cout << "GG disponivel" << endl;
+    }else{
+        cout << "GG indisponivel" << endl;
+    }
+
+    cout << "Opcoes extras: " << endl;
+    if(Calcao1.estampada == true){
+        cout << "estampada disponivel" << endl;
+    }else{
+        cout << "estampada indisponivel" << endl;
+    }
+}
+
+int compra(){
+    system("clear||cls");
+
+    cout << "Compra realizada com sucesso" << endl;
+    cout << "obrigado por visitar a 4 ootd's";
+        Sleep(3000);
+        return 0;
+}
+
+void catalogoCamiseta(){
+    string cor;
+    string tamanho;
+    int estampa;
+    system("clear||cls");
+    cout << "Catalogo:" << endl;
+    cout << "Camisetas disponiveis:" << endl;
+
+    Camisetas Camiseta1;
+    Camiseta1.cor = "azul";
+    Camiseta1.tamanhos.P = true;
+    Camiseta1.tamanhos.M = true;
+    Camiseta1.tamanhos.G = true;
+    Camiseta1.tamanhos.GG = true;
+    Camiseta1.estampada = true;
+    mostracamiseta(Camiseta1);
+    
+    Camisetas Camiseta2;
+    Camiseta2.cor = "preta";
+    Camiseta2.tamanhos.P = true;
+    Camiseta2.tamanhos.M = true;
+    Camiseta2.tamanhos.G = false;
+    Camiseta2.tamanhos.GG = true;
+    Camiseta2.estampada = true;
+    mostracamiseta(Camiseta2);
+
+    cout << "Qual cor desejaria?" << endl;
+    cin >> cor;
+    if(cor == "azul"){
+        system("clear||cls");
+        mostracamiseta(Camiseta1);
+    cout << "Qual tamanho?" << endl;
+    cin >> tamanho;
+        if(tamanho == "p"){
+            if(Camiseta1.tamanhos.P == true){
+            system("clear||cls");
+            cout << "p selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCamiseta();
+            }
+    }else if(tamanho == "m"){
+            if(Camiseta1.tamanhos.M == true){
+            system("clear||cls");
+            cout << "m selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCamiseta();
+            }
+    }else if(tamanho == "g"){
+            if(Camiseta1.tamanhos.G == true){
+            system("clear||cls");
+            cout << "g selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCamiseta();
+            }
+    }else if(tamanho == "gg"){
+            if(Camiseta1.tamanhos.GG == true){
+            system("clear||cls");
+            cout << "gg selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCamiseta();
+            }
+    }
+
+    cout << "Estampado?" << endl;
+    cout << "1. SIM" << endl;
+    cout << "2. NAO" << endl;
+    cin >> estampa;
+    compra();
+
+    }else if(cor == "preta"){
+        system("clear||cls");
+        mostracamiseta(Camiseta2);
+        cout << "Qual tamanho?" << endl;
+        cin >> tamanho;
+                if(tamanho == "p"){
+                    if(Camiseta2.tamanhos.P == true){
+                    system("clear||cls");
+                    cout << "p selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCamiseta();
+                    }
+            }else if(tamanho == "m"){
+                    if(Camiseta2.tamanhos.M == true){
+                    system("clear||cls");
+                    cout << "m selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCamiseta();
+                    }
+            }else if(tamanho == "g"){
+                    if(Camiseta2.tamanhos.G == true){
+                    system("clear||cls");
+                    cout << "g selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCamiseta();
+                    }
+            }else if(tamanho == "gg"){
+                    if(Camiseta2.tamanhos.GG == true){
+                    system("clear||cls");
+                    cout << "gg selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCamiseta();
+                    }
+            }
+        }else{
+            cout << "Cor indisponivel, digite outra:" << endl;
+            catalogoCamiseta();
+        }
+    compra();
+}
+
+void catalogoCalcas(){
+    string cor;
+    string tamanho;
+    int estampa;
+    system("clear||cls");
+    cout << "Catalogo:" << endl;
+    cout << "Calcas disponiveis:" << endl;
+
+    Calca Calca1;
+    Calca1.cor = "roxo";
+    Calca1.tamanhos.P = true;
+    Calca1.tamanhos.M = true;
+    Calca1.tamanhos.G = true;
+    Calca1.tamanhos.GG = true;
+    Calca1.estampada = true;
+    mostracalca(Calca1);
+
+    Calca Calca2;
+    Calca2.cor = "vermelha";
+    Calca2.tamanhos.P = true;
+    Calca2.tamanhos.M = true;
+    Calca2.tamanhos.G = true;
+    Calca2.tamanhos.GG = true;
+    Calca2.estampada = true;
+    mostracalca(Calca2);
+
+    cout << "Qual cor desejaria?" << endl;
+    cin >> cor;
+    if(cor == "roxo"){
+        system("clear||cls");
+        mostracalca(Calca1);
+    cout << "Qual tamanho?" << endl;
+    cin >> tamanho;
+        if(tamanho == "p"){
+            if(Calca1.tamanhos.P == true){
+            system("clear||cls");
+            cout << "p selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCalcas();
+            }
+    }else if(tamanho == "m"){
+            if(Calca1.tamanhos.M == true){
+            system("clear||cls");
+            cout << "m selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCalcas();
+            }
+    }else if(tamanho == "g"){
+            if(Calca1.tamanhos.G == true){
+            system("clear||cls");
+            cout << "g selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCalcas();
+            }
+    }else if(tamanho == "gg"){
+            if(Calca1.tamanhos.GG == true){
+            system("clear||cls");
+            cout << "gg selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCalcas();
+            }
+    }
+
+    }else if(cor == "vermelha"){
+        system("clear||cls");
+        mostracalca(Calca2);
+        cout << "Qual tamanho?" << endl;
+        cin >> tamanho;
+                if(tamanho == "p"){
+                    if(Calca2.tamanhos.P == true){
+                    system("clear||cls");
+                    cout << "p selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCalcas();
+                    }
+            }else if(tamanho == "m"){
+                    if(Calca2.tamanhos.M == true){
+                    system("clear||cls");
+                    cout << "m selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCalcas();
+                    }
+            }else if(tamanho == "g"){
+                    if(Calca2.tamanhos.G == true){
+                    system("clear||cls");
+                    cout << "g selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCalcas();
+                    }
+            }else if(tamanho == "gg"){
+                    if(Calca2.tamanhos.GG == true){
+                    system("clear||cls");
+                    cout << "gg selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCalcas();
+                    }
+            }
+        }else{
+            cout << "Cor indisponivel, digite outra:" << endl;
+            catalogoCalcas();
+        }
+    
+    cout << "Estampado?" << endl;
+    cout << "1. SIM" << endl;
+    cout << "2. NAO" << endl;
+    cin >> estampa;
+    compra();
+}
+
+void catalogoCalcao(){
+    string cor;
+    string tamanho;
+    int estampa;
+    system("clear||cls");
+    cout << "Catalogo:" << endl;
+    cout << "Calcoes disponiveis:" << endl;
+
+    Calcao Calcao1;
+    Calcao1.cor = "amarelo";
+    Calcao1.tamanhos.P = false;
+    Calcao1.tamanhos.M = true;
+    Calcao1.tamanhos.G = true;
+    Calcao1.tamanhos.GG = false;
+    Calcao1.estampada = true;
+    mostracalcao(Calcao1);
+
+    Calcao Calcao2;
+    Calcao2.cor = "branco";
+    Calcao2.tamanhos.P = true;
+    Calcao2.tamanhos.M = true;
+    Calcao2.tamanhos.G = true;
+    Calcao2.tamanhos.GG = false;
+    Calcao2.estampada = true;
+    mostracalcao(Calcao2);
+    
+    cout << "Qual cor desejaria?" << endl;
+    cin >> cor;
+    if(cor == "amarelo"){
+        system("clear||cls");
+        mostracalcao(Calcao1);
+    cout << "Qual tamanho?" << endl;
+    cin >> tamanho;
+        if(tamanho == "p"){
+            if(Calcao1.tamanhos.P == true){
+            system("clear||cls");
+            cout << "p selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCalcao();
+            }
+    }else if(tamanho == "m"){
+            if(Calcao1.tamanhos.M == true){
+            system("clear||cls");
+            cout << "m selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCalcao();
+            }
+    }else if(tamanho == "g"){
+            if(Calcao1.tamanhos.G == true){
+            system("clear||cls");
+            cout << "g selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCalcao();
+            }
+    }else if(tamanho == "gg"){
+            if(Calcao1.tamanhos.GG == true){
+            system("clear||cls");
+            cout << "gg selecionado" << endl;
+            } else{
+                cout << "Tamanho invalido" << endl;
+                catalogoCalcao();
+            }
+    }
+
+    cout << "Estampado?" << endl;
+    cout << "1. SIM" << endl;
+    cout << "2. NAO" << endl;
+    cin >> estampa;
+    compra();
+
+    }else if(cor == "branco"){
+        system("clear||cls");
+        mostracalcao(Calcao2);
+        cout << "Qual tamanho?" << endl;
+        cin >> tamanho;
+                if(tamanho == "p"){
+                    if(Calcao2.tamanhos.P == true){
+                    system("clear||cls");
+                    cout << "p selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCalcao();
+                    }
+            }else if(tamanho == "m"){
+                    if(Calcao2.tamanhos.M == true){
+                    system("clear||cls");
+                    cout << "m selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCalcao();
+                    }
+            }else if(tamanho == "g"){
+                    if(Calcao2.tamanhos.G == true){
+                    system("clear||cls");
+                    cout << "g selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCalcao();
+                    }
+            }else if(tamanho == "gg"){
+                    if(Calcao2.tamanhos.GG == true){
+                    system("clear||cls");
+                    cout << "gg selecionado" << endl;
+                    } else{
+                        cout << "Tamanho invalido" << endl;
+                        catalogoCalcao();
+                    }
+            }
+        }else{
+            cout << "Cor indisponivel, digite outra:" << endl;
+            catalogoCalcao();
+        }
+    compra();
+}
+
+void catalogo(){
+    int escolha;
+    system("clear||cls");
+    cout << "Qual item deseja comprar?" << endl;
+    cout << "1. Camiseta" << endl;
+    cout << "2. Calca" << endl;
+    cout << "3. Calcao" << endl;
+    cin >> escolha;
+    if(escolha == 1){
+        catalogoCamiseta();
+    }else if(escolha == 2){
+        catalogoCalcas();
+    }else if(escolha == 3){
+        catalogoCalcao();
+    }else{
+        cout << "Caractere inválido, tente novamente:" << endl;
+    }
+}
+
+void buscar(){
+    int cores = 6;
+    string v[cores];
+    string n;
+    v[0] = "amarelo";
+    v[1] = "preto";
+    v[2] = "vermelho";
+    v[3] = "azul";
+    v[4] = "branco";
+    v[5] = "roxo";
+    cout << "Busca por cor" << endl;
+    cout << "Qual cor deseja?" << endl;
+    cin >> n;
+
+    if(v[3] == n || v[1] == n){
+        catalogoCamiseta();
+    }else if(v[5] == n|| v[2] == n){
+        catalogoCalcas();
+    }else if(v[4] == n || v[0] == n){
+        catalogoCalcao();
+    }
+}
+
+int menu(){
+    int pagamento;
+    int escolha;
+    bool validade = false;
+    system("clear||cls");
+
+    cout << "Bem Vindo a 4 ootd's" << endl;
+    cout << "1. Cadastrar novo usuario" << endl;
+    cout << "2. Ver catalogo" << endl;
+    cout << "3. Buscar" << endl;
+    cout << "4. Sair" << endl;
+
+    while(validade == false){
+
+        cin >> escolha;
+        if(escolha == 1){
+            validade = true;
+            escolha = 0;
+            cadastro();
+            menu();
+        }else if(escolha == 2){
+            if(login == 1){
+                validade = true;
+                escolha = 0;
+                catalogo();
+            }else{
+                int verifica;
+                system("clear||cls");
+                cout << "Voce precisa ser cadastrado para ver e comprar produtos" << endl;
+                cout << "Cadsatrar?" << endl;
+                cout << "1. SIM" << endl;
+                cout << "2. NAO" << endl;
+                cin >> verifica;
+                if(verifica == 1){
+                    cadastro();
+                    menu();
+                }else{
+                    system("clear||cls");
+                    cout << "obrigado por visitar a 4 ootd's";
+                    Sleep(5000);
+                    return 0;
+                }
+            }
+
+        }else if(escolha == 3){
+            buscar();
+        }else if(escolha == 4){
+            system("clear||cls");
+            cout << "obrigado por visitar a 4 ootd's";
+            Sleep(5000);
+            return 0;
+        }else{
+            system("clear||cls");
+            cout << "Numero invalido" << endl << "Selecione novamente:" << endl;
+            cout << "1. Cadastrar novo usuario" << endl;
+            cout << "2. Ver catalogo" << endl;
+            cout << "3. Pedir uma peca que nao esta no catalogo" << endl;
+            cout << "4. Sair" << endl;
+        }
+    }
+    return 0;
+}
+
+int main(){
+    menu();
+    return 0;
+}
